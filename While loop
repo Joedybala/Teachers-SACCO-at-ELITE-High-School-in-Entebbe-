@@ -1,0 +1,30 @@
+
+package com.mycompany.elitesacco;
+import java.util.Scanner;
+
+public class EliteSACCOwhileLoop {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        final double rate = 0.05; // 5% interest rate
+
+        System.out.print("Enter number of teachers at Elite Entebbe: ");
+        int n = input.nextInt();
+
+        int count = 1;
+        while (count <= n) {
+            System.out.println("\nTeacher " + count + ":");
+            System.out.print("Enter principal amount: ");
+            double principal = input.nextDouble();
+
+            System.out.print("Enter time period in years: ");
+            int time = input.nextInt();
+
+            double amount = principal * (1 + rate * time);
+            System.out.println("Value of investment after " + time + " years: " + amount);
+
+            count++;
+        }
+
+        input.close();
+    }
+}
