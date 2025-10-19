@@ -1,0 +1,36 @@
+
+package com.mycompany.concavemirrorcheck;
+import java.util.Scanner;
+
+public class ConcaveMirrorCheck {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input
+        System.out.print("Enter the object distance u (cm): ");
+        double u = input.nextDouble();
+
+        System.out.print("Enter the image distance v (cm): ");
+        double v = input.nextDouble();
+
+        // Ensuring u is negative for concave mirrors
+        if (u > 0) {
+            u = -u;
+        }
+
+        // Calculating focal length using mirror formula: 1/f = 1/v + 1/u
+        double f = 1 / ((1 / v) + (1 / u));
+
+        // Display the focal length
+        System.out.printf("Calculated focal length (f): %.2f cm%n", f);
+
+        // Checking if focal length lies between 21.0 and 25.0 inclusive
+        if (f >= 21.0 && f <= 25.0) {
+            System.out.println("The mirror is ACCEPTABLE.");
+        } else {
+            System.out.println("The mirror is NOT acceptable.");
+        }
+
+        input.close();
+    }
+}
